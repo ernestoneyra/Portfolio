@@ -1,7 +1,9 @@
 import React from "react";
 
+
 export default function Profile() {
   return (
+    <>
     <div className="profile-container">
       <div className="profile-parent">
         <div className="profile-details">
@@ -19,7 +21,7 @@ export default function Profile() {
           <div className="profile-details-name">
             <span className="primary-text">
               {""}
-              Hello, I'm <span className="highlighted-text">Ernesto Neyra</span>
+              Hej, mitt namn är <span className="highlighted-text">Ernesto Neyra</span>
             </span>
           </div>
           <div className="profiile-details-role">
@@ -38,21 +40,20 @@ export default function Profile() {
                   "HTML/CSS/JS/REACT",
                   1000,
                 ]} />*/}
-                Front-End Developer
+                Front-End Utvecklare
               </h1>
               <span className="profile-role-tagline">
-                Knack of building applications with front and back end
-                operations.
+                En talang för att bygga applikationer i front och back end.
               </span>
             </span>
           </div>
           <div className="profile-options">
             <button className="btn primary-btn">
               {""}
-              Hire Me!
+              Anställ mig!
             </button>
             <a href="Ernesto.Neyra.CV.pdf" download="Ernesto.Neyra.CV.pdf">
-              <button className="btn highlighted-btn">Get resume</button>
+              <button className="btn highlighted-btn">Hämta CV</button>
             </a>
           </div>
         </div>
@@ -60,6 +61,8 @@ export default function Profile() {
           <div className="profile-picture-background"></div>
         </div>
       </div>
+     
     </div>
+    </>
   );
 }

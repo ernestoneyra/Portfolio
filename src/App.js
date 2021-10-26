@@ -1,6 +1,14 @@
-import Profile from "./Pages/Home/Profile/Profile";
-import "./Pages/Home/Profile/Profile.css"
+/* JSX */
+/* import Home from "./Pages/Home/Home"; */
+/* CSS */
+import "./Components/Profile/Profile.css"
+import "./Components/Footer/Footer.css"
+import "./Pages/Home/Home.css"
 import "./App.css";
+/* UTILS */
+import Component from "./Components/Component";
+
+
 
 if (module.hot) {
   module.hot.accept();
@@ -9,7 +17,7 @@ if (module.hot) {
 function App() {
   return (
     <div className="App">
-      <Profile />
+     <Component/>
     </div>
   );
 }
