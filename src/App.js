@@ -1,4 +1,6 @@
-import Profile from "./Pages/Home/Profile";
+import Profile from "./Pages/Home/Profile/Profile";
+import "./Pages/Home/Profile/Profile.css"
+import "./App.css";
 
 if (module.hot) {
   module.hot.accept();
