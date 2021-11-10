@@ -39,4 +39,30 @@ export default class ScrollService {
         return false;
     }
   };
+  checkCurrentPageUnderViewport = (event) => {
+    if (!event || Object.keys(event).length < 1) return;
+    for (let page of TOTAL_PAGES) {
+      let pageFromDOM = document.getElementById(page.page_name);
+      if (!pageFromDOM) continue;
+
+      let fullyVisible = this.isElementinView(pageFromDOM, "complete");
+      let partiallyVisible = this.isElementinView(pageFromDOM, "partial");
+
+      if (fullyVisible || partiallyVisible) {
+        if (partiallyVisible && !page.alreadyRendered) {
+          ScrollService.currentPageFadeIn.next({
+            fadeInPage: page.page_name,
+          });
+          page["alreadyRendered"] = true;
+          break;
+        }
+      }
+      if (fullyVisible) {
+        ScrollService.currentPageBroadCaster.next({
+          pageInView: page.page_name,
+        });
+        break;
+      }
+    }
+  };
 }
