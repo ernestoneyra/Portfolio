@@ -6,7 +6,7 @@ import "./Components/Footer/Footer.css"
 import "./Pages/Home/Home.css"
 import "./App.css";
 /* UTILS */
-import Component from "./Components/Component";
+import PortfolioContainer from "./Components/PortfolioContainer";
 
 
 
@@ -17,7 +17,7 @@ if (module.hot) {
 function App() {
   return (
     <div className="App">
-     <Component/>
+     <PortfolioContainer/>
     </div>
   );
 }
