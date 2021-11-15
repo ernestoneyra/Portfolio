@@ -29,12 +29,12 @@ export default function Header() {
       </div>
     ));
   };
- 
+
   const getHeaderOptionsClass = (index) => {
     let classes = "header-option";
-    if (index < TOTAL_PAGES.length - 1) classes += "header-option-seperator";
+    if (index < TOTAL_PAGES.length - 1) classes += " header-option-seperator";
 
-    if (selectedPage === index) classes += "selected-header-option";
+    if (selectedPage === index) classes += " selected-header-option";
     return classes;
   };
 
@@ -65,7 +65,7 @@ export default function Header() {
           </div>
           <div
             className={
-              (showHeaderOptions)
+              showHeaderOptions
                 ? "header-options show-hamburger-options"
                 : "header-options"
             }
