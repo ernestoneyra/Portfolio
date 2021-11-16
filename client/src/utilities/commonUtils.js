@@ -1,5 +1,6 @@
 import Home from "../Pages/Home/Home";
 import AboutMe from "../Pages/AboutMe/AboutMe";
+import Resume from "../Pages/Resume/Resume";
 
 export const TOTAL_PAGES = [
   {
@@ -9,6 +10,10 @@ export const TOTAL_PAGES = [
   {
     page_name: "AboutMe",
     component: AboutMe,
+  },
+  {
+    page_name: "Resume",
+    component: Resume,
   },
 ];
 

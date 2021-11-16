@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import PageHeading from "../../utilities/PageHeading/PageHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
-
+import "./AboutMe.css";
 
 export default function AboutMe(props) {
   let fadeInPageHandler = (page) => {
@@ -28,9 +28,8 @@ export default function AboutMe(props) {
   const renderedHighlights = () => {
     return PAGE_CONSTANTS.highlights.bullets.map((value, i) => (
       <div className="highlight" key={i}>
-        <div className=" highlight-blob">
-          <span>{value}</span>
-        </div>
+        <div className="highlight-blob"></div>
+        <span>{value}</span>
       </div>
     ));
   };
@@ -46,13 +45,13 @@ export default function AboutMe(props) {
               {PAGE_CONSTANTS.description}
             </span>
             <div className="about-me-highlights">
-              <div className="highlights-heading">
+              <div className="highlight-heading">
                 <span>{PAGE_CONSTANTS.highlights.heading}</span>
               </div>
               {renderedHighlights()}
             </div>
             <div className="about-me-options">
-            <button className="btn primary-btn">
+              <button className="btn primary-btn">
                 {""}
                 Anställ mig!
               </button>
