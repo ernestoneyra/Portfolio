@@ -6,19 +6,17 @@ import "./Resume.css";
 
 export default function Resume(props) {
   const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
-  const [carousalOffSetStyle, setCarousalOffSetStyle] = useState({});
+  const [carousalOffsetStyle, setCarousalOffsetStyle] = useState({});
 
   let fadeInPageHandler = (page) => {
     if (page.fadePage !== props.id) return;
 
-    Animations.Animations.fadeInPage(props.id);
+    Animations.animations.fadeInPage(props.id);
   };
-
-  console.log(props.id)
-
   const fadeInSubscription =
     ScrollService.currentPageFadeIn.subscribe(fadeInPageHandler);
 
+  /* REUSABLE MINOR COMPONENTS */
   const ResumeHeading = (props) => {
     return (
       <div className="resume-heading">
@@ -26,7 +24,9 @@ export default function Resume(props) {
           <div className="heading-bullet"></div>
           <span>{props.heading ? props.heading : ""}</span>
           {props.duration ? (
-            <div className="heading-date">{props.duration}</div>
+            <div className="heading-date">
+              {props.duration}
+            </div>
           ) : (
             <div></div>
           )}
@@ -41,7 +41,7 @@ export default function Resume(props) {
     );
   };
 
-  /* Static data for the labels */
+  /* STATIC RESUME DATA FOR THE LABELS*/
   const resumeBullets = [
     { label: "Utbildning", logoSrc: "education.svg" },
     { label: "Arbetserfarenhet", logoSrc: "work-history.svg" },
@@ -50,7 +50,8 @@ export default function Resume(props) {
     { label: "Intressen", logoSrc: "interests.svg" },
   ];
 
-  const programminSkillDetails = [
+  //here we have
+  const programmingSkillsDetails = [
     { skill: "HTML", ratingPercentage: 40 },
     { skill: "CSS", ratingPercentage: 35 },
     { skill: "Javascript", ratingPercentage: 20 },
@@ -60,8 +61,7 @@ export default function Resume(props) {
     { skill: "Node JS", ratingPercentage: 10 },
   ];
 
-  /* These will be used later under projects.   */
-  const projectDetails = [
+  const projectsDetails = [
     {
       title: "Personal Portfolio Website",
       duration: "2021",
@@ -83,7 +83,6 @@ export default function Resume(props) {
   ];
 
   const resumeDetails = [
-    /* EDUCATION */
     <div className="resume-page-container" key="education">
       <ResumeHeading
         heading={"EC Utbildning, Helsingborg"}
@@ -96,13 +95,11 @@ export default function Resume(props) {
         subHeading={"Japanska"}
         duration={"2016-2018"}
       />
-
       <ResumeHeading
-        heading={"Mittuniversitetet, Sundsvall"}
+         heading={"Mittuniversitetet, Sundsvall"}
         subHeading={"Media- och kommunikationsvetenskap"}
         duration={"2012-2016"}
       />
-
       <ResumeHeading
         heading={"Västermalm gymnasium, Sundsvall"}
         subHeading={"Datavetenskap"}
@@ -120,23 +117,14 @@ export default function Resume(props) {
         />
         <div className="experience-description">
           <span className="resume-description-text">
-            Förmedlade företagets tjänster och produkter till nya och nuvarande
+          Förmedlade företagets tjänster och produkter till nya och nuvarande
             kunder.
           </span>
-          <br />
         </div>
-        {/* 
-      <div className="experience-description">
-        <span className="resume-description-text">
-    -example
-        </span>
-        <br/>
-        <span className="resume-description-text">
-    -example 2
-        </span>
-      </div> */}
-
-        <ResumeHeading
+        
+      </div>
+      <div className="experience-container">
+      <ResumeHeading
           heading={"Blueberry Språkresor. Helsingborg"}
           subHeading={"Språkrese förmedlare"}
           duration={"2019-2020"}
@@ -146,8 +134,9 @@ export default function Resume(props) {
             Förmedlare mellan personer som vill studera i Ryssland och Japan och
             skolor.
           </span>
-          <br />
         </div>
+        </div>
+        <div className="experience-container">
         <ResumeHeading
           heading={"Hotellet Södra Berget"}
           subHeading={"Receptionist"}
@@ -157,8 +146,10 @@ export default function Resume(props) {
           <span className="resume-description-text">
             Hanterade bokningar, försäljning och gästernas önskemål.
           </span>
-          <br />
+    
         </div>
+        </div>
+      {/*   <div className="experience-container">
         <ResumeHeading
           heading={"Hotell One@Tokyo, Tokyo"}
           subHeading={"Front desk agent"}
@@ -168,17 +159,18 @@ export default function Resume(props) {
           <span className="resume-description-text">
             Hanterade bokningar, försäljning och gästernas önskemål.
           </span>
-          <br />
+       
         </div>
-      </div>
+      
+        </div> */}
     </div>,
 
-    /* SKILLS */
+    /* PROGRAMMING SKILLS */
     <div
       className="resume-page-container programming-skills-container"
       key="programming-skills"
     >
-      {programminSkillDetails.map((skill, index) => (
+      {programmingSkillsDetails.map((skill, index) => (
         <div className="skill-parent" key={index}>
           <div className="heading-bullet"></div>
           <span>{skill.skill}</span>
@@ -194,22 +186,20 @@ export default function Resume(props) {
 
     /* PROJECTS */
     <div className="resume-page-container" key="projects">
-      {/* Maps through the array and prints out the content from the prijectsDetails.  */}
-
-      {projectDetails.map((projectDetails, index) => (
+      {projectsDetails.map((projectsDetails, index) => (
         <ResumeHeading
           key={index}
-          heading={projectDetails.title}
-          subHeading={projectDetails.subHeading}
-          description={projectDetails.description}
-          duration={projectDetails.duration}
+          heading={projectsDetails.title}
+          subHeading={projectsDetails.subHeading}
+          description={projectsDetails.description}
+          duration={projectsDetails.duration}
         />
       ))}
     </div>,
 
-    /* INTERESTS */
+    /* Interests */
     <div className="resume-page-container" key="interests">
-      <ResumeHeading
+       <ResumeHeading
         heading="Sport"
         description="Är intresserad av flera sporter, men mest fotboll och basket. Föredrar att spela mer än att titta på."
       />
@@ -221,17 +211,21 @@ export default function Resume(props) {
         heading="Resa"
         description="Finns inte mycket som slår känslan man får när man kommer till en ny plats och upplever något fantastiskt."
       />
+      <ResumeHeading
+        heading="Resa"
+        description="Finns inte mycket som slår känslan man får när man kommer till en ny plats och upplever något fantastiskt."
+      />
     </div>,
   ];
 
   const handleCarousal = (index) => {
-    let offSetHeight = 360;
+    let offsetHeight = 360;
 
-    let newCarousalOffSet = {
-      style: { transform: "translateY(" + index * offSetHeight * -1 + "px)" },
+    let newCarousalOffset = {
+      style: { transform: "translateY(" + index * offsetHeight * -1 + "px)" },
     };
 
-    setCarousalOffSetStyle(newCarousalOffSet);
+    setCarousalOffsetStyle(newCarousalOffset);
     setSelectedBulletIndex(index);
   };
 
@@ -257,7 +251,7 @@ export default function Resume(props) {
   const getResumePage = () => {
     return (
       <div
-        style={carousalOffSetStyle.style}
+        style={carousalOffsetStyle.style}
         className="resume-details-carousal"
       >
         {resumeDetails.map((ResumeDetail) => ResumeDetail)}
@@ -265,10 +259,14 @@ export default function Resume(props) {
     );
   };
 
+
   return (
-    <div className="resume-container page-container" id={props.id || ""}>
+    <div
+      className="resume-container page-container "
+      id={props.id || ""}
+    >
       <div className="resume-content">
-        <PageHeading title={"CV"} subHeading={"Min bakgrund"} />
+        <PageHeading title={"Resume"} subHeading={"My formal Bio Details"} />
         <div className="resume-card">
           <div className="resume-bullets">
             <div className="bullet-container">
@@ -276,7 +274,8 @@ export default function Resume(props) {
               <div className="bullets">{getBullets()}</div>
             </div>
           </div>
-          <div className="resume-bullets-details">{getResumePage()}</div>
+
+          <div className="resume-bullet-details">{getResumePage()}</div>
         </div>
       </div>
     </div>
