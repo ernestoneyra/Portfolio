@@ -9,6 +9,11 @@ export default function AboutMe(props) {
     if (page.fadePage !== props.id) return;
     Animations.animations.fadeInPage(props.id);
   };
+
+  console.log(props.id)
+
+
+
   const fadeInSubscription =
     ScrollService.currentPageFadeIn.subscribe(fadeInPageHandler);
 

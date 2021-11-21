@@ -1,5 +1,5 @@
 import React from "react";
-import './PageHeading.css'
+import "./PageHeading.css";
 
 export default function PageHeading(props) {
   return (
@@ -15,12 +15,11 @@ export default function PageHeading(props) {
       ) : (
         <div></div>
       )}
-      <div className='heading-seperator'>
-          <div className='seperator-line'>
-              <div className='seperator-blob'>
-                  <div></div>
-              </div>
-          </div>
+      <div className="heading-seperator">
+        <div className="seperator-line"></div>
+        <div className="seperator-blob">
+          <div></div>
+        </div>
       </div>
     </div>
   );

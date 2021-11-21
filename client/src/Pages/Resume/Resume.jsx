@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PageHeading from "../../utilities/PageHeading/PageHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
-import './Resume.css'
+import "./Resume.css";
 
 export default function Resume(props) {
   const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
@@ -10,40 +10,38 @@ export default function Resume(props) {
 
   let fadeInPageHandler = (page) => {
     if (page.fadePage !== props.id) return;
-    
-    Animations.animations.fadeInPage(props.id);
+
+    Animations.Animations.fadeInPage(props.id);
   };
-  
+
+  console.log(props.id)
+
   const fadeInSubscription =
     ScrollService.currentPageFadeIn.subscribe(fadeInPageHandler);
 
   const ResumeHeading = (props) => {
     return (
-      
       <div className="resume-heading">
         <div className="resume-main-heading">
           <div className="heading-bullet"></div>
-            <span>{props.heading ? props.heading : ""}</span>
-            {props.duration ? (
-              <div className="heading-date">{props.duration}</div>
-            ) : (
-              <div></div>
-            )}
-            
-          </div>
-          
-          <div className="resume-sub-heading">
-            <span>{props.subHeading ? props.subHeading : ""}</span>
-          </div>
-          <div className="resume-heading-description">
-            <span>{props.description ? props.description : ""} </span>
-          </div>
+          <span>{props.heading ? props.heading : ""}</span>
+          {props.duration ? (
+            <div className="heading-date">{props.duration}</div>
+          ) : (
+            <div></div>
+          )}
         </div>
-        
+        <div className="resume-sub-heading">
+          <span>{props.subHeading ? props.subHeading : ""}</span>
+        </div>
+        <div className="resume-heading-description">
+          <span>{props.description ? props.description : ""}</span>
+        </div>
+      </div>
     );
   };
 
-/* Static data for the labels */
+  /* Static data for the labels */
   const resumeBullets = [
     { label: "Utbildning", logoSrc: "education.svg" },
     { label: "Arbetserfarenhet", logoSrc: "work-history.svg" },
@@ -51,7 +49,7 @@ export default function Resume(props) {
     { label: "Projekt", logoSrc: "projects.svg" },
     { label: "Intressen", logoSrc: "interests.svg" },
   ];
-console.log(fadeInPageHandler)
+
   const programminSkillDetails = [
     { skill: "HTML", ratingPercentage: 40 },
     { skill: "CSS", ratingPercentage: 35 },
@@ -69,14 +67,12 @@ console.log(fadeInPageHandler)
       duration: "2021",
       description: "Portfolio sida mina personliga projekt",
       subHeading: "Använda tekniner: React JS, Mongo DB",
-      tutorial: "Ja",
     },
     {
       title: "E-handel projekt",
       duration: "2021",
       description: "E-handel sida skapad för min kurs i back-end",
       subHeading: "Använda tekniner: React JS, Mongo DB, Node JS",
-      tutorial: "Ja",
     },
     {
       title: "Personal Portfolio Website",
@@ -94,16 +90,19 @@ console.log(fadeInPageHandler)
         subHeading={"Front-End Utveckling"}
         duration={"2020-2022"}
       />
+
       <ResumeHeading
         heading={"SAMU & ISI, Tokyo"}
         subHeading={"Japanska"}
         duration={"2016-2018"}
       />
+
       <ResumeHeading
         heading={"Mittuniversitetet, Sundsvall"}
         subHeading={"Media- och kommunikationsvetenskap"}
         duration={"2012-2016"}
       />
+
       <ResumeHeading
         heading={"Västermalm gymnasium, Sundsvall"}
         subHeading={"Datavetenskap"}
@@ -113,18 +112,20 @@ console.log(fadeInPageHandler)
 
     /* WORK EXPERIENCE */
     <div className="resume-page-container" key="work-experience">
-      <ResumeHeading
-        heading={"Ability Hub, Helsingborg"}
-        subHeading={"Tjänsteförmedlare"}
-        duration={"2020-2020"}
-      />
-      <div className="experience-description">
-        <span className="resume-description-text">
-          Förmedlade företagets tjänster och produkter till nya och nuvarande
-          kunder.
-        </span>
-      </div>
-      {/* 
+      <div className="experience-container">
+        <ResumeHeading
+          heading={"Ability Hub, Helsingborg"}
+          subHeading={"Tjänsteförmedlare"}
+          duration={"2020-2020"}
+        />
+        <div className="experience-description">
+          <span className="resume-description-text">
+            Förmedlade företagets tjänster och produkter till nya och nuvarande
+            kunder.
+          </span>
+          <br />
+        </div>
+        {/* 
       <div className="experience-description">
         <span className="resume-description-text">
     -example
@@ -135,37 +136,40 @@ console.log(fadeInPageHandler)
         </span>
       </div> */}
 
-      <ResumeHeading
-        heading={"Blueberry Språkresor. Helsingborg"}
-        subHeading={"Språkrese förmedlare"}
-        duration={"2019-2020"}
-      />
-      <div className="experience-description">
-        <span className="resume-description-text">
-          Förmedlare mellan personer som vill studera i Ryssland och Japan och
-          skolor.
-        </span>
-        
-      </div>
-      <ResumeHeading
-        heading={"Hotellet Södra Berget"}
-        subHeading={"Receptionist"}
-        duration={"2018-2019"}
-      />
-      <div className="experience-description">
-        <span className="resume-description-text">
-          Hanterade bokningar, försäljning och gästernas önskemål.
-        </span>
-      </div>
-      <ResumeHeading
-        heading={"Hotell One@Tokyo, Tokyo"}
-        subHeading={"Front desk agent"}
-        duration={"2018-2018"}
-      />
-      <div className="experience-description">
-        <span className="resume-description-text">
-          Hanterade bokningar, försäljning och gästernas önskemål.
-        </span>
+        <ResumeHeading
+          heading={"Blueberry Språkresor. Helsingborg"}
+          subHeading={"Språkrese förmedlare"}
+          duration={"2019-2020"}
+        />
+        <div className="experience-description">
+          <span className="resume-description-text">
+            Förmedlare mellan personer som vill studera i Ryssland och Japan och
+            skolor.
+          </span>
+          <br />
+        </div>
+        <ResumeHeading
+          heading={"Hotellet Södra Berget"}
+          subHeading={"Receptionist"}
+          duration={"2018-2019"}
+        />
+        <div className="experience-description">
+          <span className="resume-description-text">
+            Hanterade bokningar, försäljning och gästernas önskemål.
+          </span>
+          <br />
+        </div>
+        <ResumeHeading
+          heading={"Hotell One@Tokyo, Tokyo"}
+          subHeading={"Front desk agent"}
+          duration={"2018-2018"}
+        />
+        <div className="experience-description">
+          <span className="resume-description-text">
+            Hanterade bokningar, försäljning och gästernas önskemål.
+          </span>
+          <br />
+        </div>
       </div>
     </div>,
 
@@ -222,32 +226,32 @@ console.log(fadeInPageHandler)
 
   const handleCarousal = (index) => {
     let offSetHeight = 360;
-    let newCarousalOffset = {
+
+    let newCarousalOffSet = {
       style: { transform: "translateY(" + index * offSetHeight * -1 + "px)" },
     };
-    setCarousalOffSetStyle(newCarousalOffset);
+
+    setCarousalOffSetStyle(newCarousalOffSet);
     setSelectedBulletIndex(index);
   };
 
   const getBullets = () => {
-    return (
-      resumeBullets.map((bullet, index) => (
-        <div
-          onClick={() => handleCarousal(index)}
-          className={
-            index === selectedBulletIndex ? "bullet selected-bullet" : "bullet"
-          }
-          key={index}
-        >
-          <img
-            className="bullet-logo"
-            src={require(`../../Materials/Resume/${bullet.logoSrc}`).default}
-            alt={`${bullet.logoSrc}`}
-          />
-          <span className="bullet-label">{bullet.label}</span>
-        </div>
-      ))
-    );
+    return resumeBullets.map((bullet, index) => (
+      <div
+        onClick={() => handleCarousal(index)}
+        className={
+          index === selectedBulletIndex ? "bullet selected-bullet" : "bullet"
+        }
+        key={index}
+      >
+        <img
+          className="bullet-logo"
+          src={require(`../../Materials/Resume/${bullet.logoSrc}`).default}
+          alt={`${bullet.logoSrc}`}
+        />
+        <span className="bullet-label">{bullet.label}</span>
+      </div>
+    ));
   };
 
   const getResumePage = () => {
