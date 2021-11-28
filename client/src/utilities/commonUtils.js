@@ -1,6 +1,7 @@
 import Home from "../Pages/Home/Home";
 import AboutMe from "../Pages/AboutMe/AboutMe";
 import Resume from "../Pages/Resume/Resume";
+import ContactMe from "../Pages/ContactMe/ContactMe";
 
 export const TOTAL_PAGES = [
   {
@@ -8,12 +9,16 @@ export const TOTAL_PAGES = [
     component: Home,
   },
   {
-    page_name: "AboutMe",
+    page_name: "Om mig",
     component: AboutMe,
   },
   {
-    page_name: "Resume",
+    page_name: "Backgrund",
     component: Resume,
+  },
+  {
+    page_name: "Kontakta mig",
+    component: ContactMe,
   },
 ];
 

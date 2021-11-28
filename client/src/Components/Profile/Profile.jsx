@@ -1,5 +1,6 @@
 import React from "react";
-import './Profile.css'
+/* import Typical from "react-typical"; */
+import "./Profile.css";
 import ScrollService from "../../utilities/ScrollService";
 
 export default function Profile() {
@@ -16,6 +17,9 @@ export default function Profile() {
                 <a href="https://www.youtube.com/channel/UClbCcQ2gUR9qGT4TN-x4a1Q">
                   <i className="fa fa-youtube-square"></i>
                 </a>
+                <a href="https://www.linkedin.com/in/ernesto-neyra">
+                    <i className=" fa fa-linkedin-square"></i>
+                </a>
               </div>
             </div>
 
@@ -26,33 +30,40 @@ export default function Profile() {
                 <span className="highlighted-text">Ernesto Neyra</span>
               </span>
             </div>
-            <div className="profiile-details-role">
-              <span className="primary-text">
-                {""}
+            <div className="profile-details-role">
+              {/*  <span className="primary-text">
+                {" "}
                 <h1>
-                  {/* npm i react-typical
-                {""}
-                <Typical 
-                loop={indefinitely}
-                steps={[
-                  "Front-End Developer",
-                  1000,
-                  "MERN Stack Developer",
-                  1000,
-                  "HTML/CSS/JS/REACT",
-                  1000,
-                ]} />*/}
-                  Front-End Utvecklare
+                  
+                  <Typical
+                    loop={Infinity}
+                    steps={[
+                      "Front-End Developer",
+                      1000,
+                      "MERN Stack Developer",
+                      1000,
+                      "HTML/CSS/JS/REACT",
+                      1000,
+                    ]}
+                  />
                 </h1>
-                <span className="profile-role-tagline">
-                  En talang för att bygga applikationer i front och back end.
-                </span>
+              </span> */}
+              <span className="primary-text">
+                <h1>Front-End Utvecklare</h1>
+              </span>
+
+              <span className="profile-role-tagline">
+                En talang för att bygga applikationer i front och back end.
               </span>
             </div>
             <div className="profile-options">
-            <button className="btn primary-btn"
-            onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
-            > Anställ mig </button>
+              <button
+                className="btn primary-btn"
+                onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
+              >
+                {" "}
+                Anställ mig{" "}
+              </button>
               <a href="Ernesto.Neyra.CV.pdf" download="Ernesto.Neyra.CV.pdf">
                 <button className="btn highlighted-btn">Hämta CV</button>
               </a>

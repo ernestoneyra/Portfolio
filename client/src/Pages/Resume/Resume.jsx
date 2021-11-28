@@ -24,9 +24,7 @@ export default function Resume(props) {
           <div className="heading-bullet"></div>
           <span>{props.heading ? props.heading : ""}</span>
           {props.duration ? (
-            <div className="heading-date">
-              {props.duration}
-            </div>
+            <div className="heading-date">{props.duration}</div>
           ) : (
             <div></div>
           )}
@@ -37,6 +35,9 @@ export default function Resume(props) {
         <div className="resume-heading-description">
           <span>{props.description ? props.description : ""}</span>
         </div>
+        <div className="resume-heading-description">
+          <span>{props.tutorial}</span>
+        </div>
       </div>
     );
   };
@@ -45,7 +46,7 @@ export default function Resume(props) {
   const resumeBullets = [
     { label: "Utbildning", logoSrc: "education.svg" },
     { label: "Arbetserfarenhet", logoSrc: "work-history.svg" },
-    { label: "Programming skills", logoSrc: "programming-skills.svg" },
+    { label: "Programmering", logoSrc: "programming-skills.svg" },
     { label: "Projekt", logoSrc: "projects.svg" },
     { label: "Intressen", logoSrc: "interests.svg" },
   ];
@@ -67,18 +68,21 @@ export default function Resume(props) {
       duration: "2021",
       description: "Portfolio sida mina personliga projekt",
       subHeading: "Använda tekniner: React JS, Mongo DB",
+      tutorial: "Tutorial",
     },
     {
       title: "E-handel projekt",
       duration: "2021",
       description: "E-handel sida skapad för min kurs i back-end",
       subHeading: "Använda tekniner: React JS, Mongo DB, Node JS",
+      tutorial: "Tutorial",
     },
     {
       title: "Personal Portfolio Website",
       duration: "2021",
       description: "Portfolio sida mina personliga projekt",
       subHeading: "Använda tekniner: React JS, Mongo DB",
+      tutorial: "Tutorial",
     },
   ];
 
@@ -96,7 +100,7 @@ export default function Resume(props) {
         duration={"2016-2018"}
       />
       <ResumeHeading
-         heading={"Mittuniversitetet, Sundsvall"}
+        heading={"Mittuniversitetet, Sundsvall"}
         subHeading={"Media- och kommunikationsvetenskap"}
         duration={"2012-2016"}
       />
@@ -117,14 +121,13 @@ export default function Resume(props) {
         />
         <div className="experience-description">
           <span className="resume-description-text">
-          Förmedlade företagets tjänster och produkter till nya och nuvarande
+            Förmedlade företagets tjänster och produkter till nya och nuvarande
             kunder.
           </span>
         </div>
-        
       </div>
       <div className="experience-container">
-      <ResumeHeading
+        <ResumeHeading
           heading={"Blueberry Språkresor. Helsingborg"}
           subHeading={"Språkrese förmedlare"}
           duration={"2019-2020"}
@@ -135,8 +138,8 @@ export default function Resume(props) {
             skolor.
           </span>
         </div>
-        </div>
-        <div className="experience-container">
+      </div>
+      <div className="experience-container">
         <ResumeHeading
           heading={"Hotellet Södra Berget"}
           subHeading={"Receptionist"}
@@ -146,9 +149,8 @@ export default function Resume(props) {
           <span className="resume-description-text">
             Hanterade bokningar, försäljning och gästernas önskemål.
           </span>
-    
         </div>
-        </div>
+      </div>
       {/*   <div className="experience-container">
         <ResumeHeading
           heading={"Hotell One@Tokyo, Tokyo"}
@@ -193,13 +195,14 @@ export default function Resume(props) {
           subHeading={projectsDetails.subHeading}
           description={projectsDetails.description}
           duration={projectsDetails.duration}
+          tutorial={projectsDetails.tutorial}
         />
       ))}
     </div>,
 
     /* Interests */
     <div className="resume-page-container" key="interests">
-       <ResumeHeading
+      <ResumeHeading
         heading="Sport"
         description="Är intresserad av flera sporter, men mest fotboll och basket. Föredrar att spela mer än att titta på."
       />
@@ -259,14 +262,10 @@ export default function Resume(props) {
     );
   };
 
-
   return (
-    <div
-      className="resume-container page-container "
-      id={props.id || ""}
-    >
+    <div className="resume-container page-container " id={props.id || ""}>
       <div className="resume-content">
-        <PageHeading title={"Resume"} subHeading={"My formal Bio Details"} />
+        <PageHeading title={"Backgrund"} subHeading={"Vad jag har gjort"} />
         <div className="resume-card">
           <div className="resume-bullets">
             <div className="bullet-container">
