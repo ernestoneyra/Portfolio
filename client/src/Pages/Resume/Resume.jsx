@@ -9,7 +9,7 @@ export default function Resume(props) {
   const [carousalOffsetStyle, setCarousalOffsetStyle] = useState({});
 
   let fadeInPageHandler = (page) => {
-    if (page.fadePage !== props.id) return;
+    if (page.fadeInPage !== props.id) return;
 
     Animations.animations.fadeInPage(props.id);
   };
@@ -263,7 +263,7 @@ export default function Resume(props) {
   };
 
   return (
-    <div className="resume-container page-container " id={props.id || ""}>
+    <div className="resume-container page-container fade-in" id={props.id || ""}>
       <div className="resume-content">
         <PageHeading title={"Backgrund"} subHeading={"Vad jag har gjort"} />
         <div className="resume-card">

@@ -13,7 +13,7 @@ export default class ScrollService {
 
 
   scrollToHireMe = () => {
-    let contactMePage = document.getElementById("AboutMe");
+    let contactMePage = document.getElementById("Om mig");
     if (!contactMePage) return;
 
     contactMePage.scrollIntoView({ behavior: "smooth" });
@@ -29,6 +29,13 @@ export default class ScrollService {
 
   scrollToResume = () => {
     let ResumePage = document.getElementById("Resume");
+    if (!ResumePage) return;
+
+    ResumePage.scrollIntoView({ behavior: "smooth" });
+  };
+
+  scrollToContactMe = () => {
+    let ResumePage = document.getElementById("Kontakta mig");
     if (!ResumePage) return;
 
     ResumePage.scrollIntoView({ behavior: "smooth" });

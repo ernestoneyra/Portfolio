@@ -59,7 +59,7 @@ export default function Profile() {
             <div className="profile-options">
               <button
                 className="btn primary-btn"
-                onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
+                onClick={() => ScrollService.scrollHandler.scrollToContactMe()}
               >
                 {" "}
                 Anställ mig{" "}

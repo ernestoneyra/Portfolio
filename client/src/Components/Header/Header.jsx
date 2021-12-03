@@ -21,6 +21,7 @@ export default function Header() {
   const getHeaderOptions = () => {
     return TOTAL_PAGES.map((page, i) => (
       <div
+        role="navigation"
         key={page.page_name}
         className={getHeaderOptionsClass(i)}
         onClick={() => switchPage(i, page)}
@@ -48,32 +49,30 @@ export default function Header() {
   };
 
   return (
-    
-      <div
-        className="header-container"
-        onClick={() => setShowHeaderOptions(!showHeaderOptions)}
-      >
-        <div className="header-parent">
-          <div
-            className="header-hamburger"
-            onClick={() => setShowHeaderOptions(!showHeaderOptions)}
-          >
-            <FontAwesomeIcon className="header-hamburger-bars" icon={faBars} />
-          </div>
-          {/* <div className="header-logo">
+    <div
+      className="header-container"
+      onClick={() => setShowHeaderOptions(!showHeaderOptions)}
+    >
+      <div className="header-parent">
+        <div
+          className="header-hamburger"
+          onClick={() => setShowHeaderOptions(!showHeaderOptions)}
+        >
+          <FontAwesomeIcon className="header-hamburger-bars" icon={faBars} />
+        </div>
+        {/* <div className="header-logo">
             <span>Gastrophe</span>
           </div> */}
-          <div
-            className={
-              showHeaderOptions
-                ? "header-options show-hamburger-options"
-                : "header-options"
-            }
-          >
-            {getHeaderOptions()}
-          </div>
+        <div
+          className={
+            showHeaderOptions
+              ? "header-options show-hamburger-options"
+              : "header-options"
+          }
+        >
+          {getHeaderOptions()}
         </div>
       </div>
-    
+    </div>
   );
 }

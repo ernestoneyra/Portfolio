@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "axios": "^0.24.0",
+    "react-toastify": "^8.1.0",
     "react-typical": "^0.1.3"
   }
 }

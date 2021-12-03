@@ -6,13 +6,10 @@ import "./AboutMe.css";
 
 export default function AboutMe(props) {
   let fadeInPageHandler = (page) => {
-    if (page.fadePage !== props.id) return;
+    if (page.fadeInPage !== props.id) return;
     Animations.animations.fadeInPage(props.id);
   };
-
-  console.log(props.id)
-
-
+console.log("about Me", props.id)
 
   const fadeInSubscription =
     ScrollService.currentPageFadeIn.subscribe(fadeInPageHandler);
@@ -40,7 +37,7 @@ export default function AboutMe(props) {
   };
 
   return (
-    <div className="about-me-container page-container" id={props.id || ""}>
+    <div className="about-me-container page-container fade-in" id={props.id || ""}>
       <div className="about-me-parent">
         <PageHeading title={"Om mig"} subHeading={"Varför välja mig?"} />
         <div className="about-me-card">
@@ -56,9 +53,12 @@ export default function AboutMe(props) {
               {renderedHighlights()}
             </div>
             <div className="about-me-options">
-              <button className="btn primary-btn">
-                {""}
-                Anställ mig!
+            <button
+                className="btn primary-btn"
+                onClick={() => ScrollService.scrollHandler.scrollToContactMe()}
+              >
+                {" "}
+                Anställ mig{" "}
               </button>
               <a href="Ernesto.Neyra.CV.pdf" download="Ernesto.Neyra.CV.pdf">
                 <button className="btn highlighted-btn">Hämta CV</button>
