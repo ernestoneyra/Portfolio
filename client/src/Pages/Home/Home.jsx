@@ -3,6 +3,7 @@ import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 import Profile from "../../Components/Profile/Profile";
 
+
 import './Home.css'
 
 export default function Home(props) {
@@ -12,6 +13,7 @@ export default function Home(props) {
         <Header />
         <Profile />
         <Footer />
+
       </div>
     </>
   );

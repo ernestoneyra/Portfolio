@@ -13,10 +13,10 @@ export default class ScrollService {
 
 
   scrollToHireMe = () => {
-    let contactMePage = document.getElementById("Om mig");
-    if (!contactMePage) return;
+    let aboutMePage = document.getElementById("Om mig");
+    if (!aboutMePage) return;
 
-    contactMePage.scrollIntoView({ behavior: "smooth" });
+    aboutMePage.scrollIntoView({ behavior: "smooth" });
   };
 
 
@@ -28,19 +28,25 @@ export default class ScrollService {
   };
 
   scrollToResume = () => {
-    let ResumePage = document.getElementById("Resume");
+    let ResumePage = document.getElementById("Bakgrund");
     if (!ResumePage) return;
 
     ResumePage.scrollIntoView({ behavior: "smooth" });
   };
 
   scrollToContactMe = () => {
-    let ResumePage = document.getElementById("Kontakta mig");
-    if (!ResumePage) return;
+    let contactMePage = document.getElementById("Kontakta mig");
+    if (!contactMePage) return;
 
-    ResumePage.scrollIntoView({ behavior: "smooth" });
+    contactMePage.scrollIntoView({ behavior: "smooth" });
   };
 
+  scrollToBottom = () => {
+    let CreditPage = document.getElementById("Credit");
+    if (!CreditPage) return;
+
+    CreditPage.scrollIntoView({ behavior: "smooth" });
+  };
 
 
   isElementinView = (elem, type) => {

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PageHeading from "../../utilities/PageHeading/PageHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
@@ -9,7 +9,7 @@ export default function AboutMe(props) {
     if (page.fadeInPage !== props.id) return;
     Animations.animations.fadeInPage(props.id);
   };
-console.log("about Me", props.id)
+
 
   const fadeInSubscription =
     ScrollService.currentPageFadeIn.subscribe(fadeInPageHandler);
