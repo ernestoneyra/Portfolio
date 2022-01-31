@@ -3,13 +3,17 @@ import Footer from "../../Components/Footer/Footer";
 import Header from "../../Components/Header/Header";
 import Profile from "../../Components/Profile/Profile";
 
-export default function Home() {
+
+import './Home.css'
+
+export default function Home(props) {
   return (
     <>
-      <div className="home-container">
+      <div className="home-container" id={props.id || ""}>
         <Header />
         <Profile />
         <Footer />
+
       </div>
     </>
   );

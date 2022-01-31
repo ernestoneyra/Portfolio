@@ -1,0 +1,12 @@
+.bottom-bar {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+}
+.bottom-bar p {
+    justify-self: center;
+    color: white;
+}

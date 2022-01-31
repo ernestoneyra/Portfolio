@@ -21,6 +21,7 @@ export default function Header() {
   const getHeaderOptions = () => {
     return TOTAL_PAGES.map((page, i) => (
       <div
+        role="navigation"
         key={page.page_name}
         className={getHeaderOptionsClass(i)}
         onClick={() => switchPage(i, page)}
@@ -29,12 +30,12 @@ export default function Header() {
       </div>
     ));
   };
- 
+
   const getHeaderOptionsClass = (index) => {
     let classes = "header-option";
-    if (index < TOTAL_PAGES.length - 1) classes += "header-option-seperator";
+    if (index < TOTAL_PAGES.length - 1) classes += " header-option-seperator";
 
-    if (selectedPage === index) classes += "selected-header-option";
+    if (selectedPage === index) classes += " selected-header-option";
     return classes;
   };
 
@@ -48,32 +49,30 @@ export default function Header() {
   };
 
   return (
-    <>
-      <div
-        className="header-container"
-        onClick={() => setShowHeaderOptions(!showHeaderOptions)}
-      >
-        <div className="header-parent">
-          <div
-            className="header-hamburger"
-            onClick={() => setShowHeaderOptions(!showHeaderOptions)}
-          >
-            <FontAwesomeIcon className="header-hamburger-bars" icon={faBars} />
-          </div>
-          <div className="header-logo">
+    <div
+      className="header-container"
+      onClick={() => setShowHeaderOptions(!showHeaderOptions)}
+    >
+      <div className="header-parent">
+        <div
+          className="header-hamburger"
+          onClick={() => setShowHeaderOptions(!showHeaderOptions)}
+        >
+          <FontAwesomeIcon className="header-hamburger-bars" icon={faBars} />
+        </div>
+        {/* <div className="header-logo">
             <span>Gastrophe</span>
-          </div>
-          <div
-            className={
-              (showHeaderOptions)
-                ? "header-options show-hamburger-options"
-                : "header-options"
-            }
-          >
-            {getHeaderOptions()}
-          </div>
+          </div> */}
+        <div
+          className={
+            showHeaderOptions
+              ? "header-options show-hamburger-options"
+              : "header-options"
+          }
+        >
+          {getHeaderOptions()}
         </div>
       </div>
-    </>
+    </div>
   );
 }
