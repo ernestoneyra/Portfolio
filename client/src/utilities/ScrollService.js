@@ -10,25 +10,54 @@ export default class ScrollService {
   constructor() {
     window.addEventListener("scroll", this.checkCurrentPageUnderViewport);
   }
+
+
   scrollToHireMe = () => {
-    let contactMePage = document.getElementById("Contact_Me");
-    if (!contactMePage) return;
-    contactMePage.scrollIntoView({ behavior: "smooth" });
+    let aboutMePage = document.getElementById("Om mig");
+    if (!aboutMePage) return;
+
+    aboutMePage.scrollIntoView({ behavior: "smooth" });
   };
+
+
   scrollToHome = () => {
     let homePage = document.getElementById("Home");
     if (!homePage) return;
+
     homePage.scrollIntoView({ behavior: "smooth" });
   };
+
+  scrollToResume = () => {
+    let ResumePage = document.getElementById("Bakgrund");
+    if (!ResumePage) return;
+
+    ResumePage.scrollIntoView({ behavior: "smooth" });
+  };
+
+  scrollToContactMe = () => {
+    let contactMePage = document.getElementById("Kontakta mig");
+    if (!contactMePage) return;
+
+    contactMePage.scrollIntoView({ behavior: "smooth" });
+  };
+
+  scrollToBottom = () => {
+    let CreditPage = document.getElementById("Credit");
+    if (!CreditPage) return;
+
+    CreditPage.scrollIntoView({ behavior: "smooth" });
+  };
+
+
   isElementinView = (elem, type) => {
     let rec = elem.getBoundingClientRect();
     let elementTop = rec.top;
-    let elementBottom = rec.bottom;
+    let elemBottom = rec.bottom;
 
     let partiallyVisible =
-      elementTop < window.innerHeight && elementBottom >= 0;
+      elementTop < window.innerHeight && elemBottom >= 0;
     let completelyVisible =
-      elementTop >= 0 && elementBottom <= window.innerHeight;
+      elementTop >= 0 && elemBottom <= window.innerHeight;
 
     switch (type) {
       case "partial":
@@ -63,6 +92,7 @@ export default class ScrollService {
         });
         break;
       }
+      
     }
   };
 }
