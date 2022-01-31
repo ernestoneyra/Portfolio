@@ -1,12 +1,13 @@
 /* JSX */
 /* import Home from "./Pages/Home/Home"; */
 /* CSS */
-import "./Components/Profile/Profile.css";
-import "./Components/Footer/Footer.css";
-import "./Pages/Home/Home.css";
+import "./Components/Profile/Profile.css"
+import "./Components/Footer/Footer.css"
+import "./Pages/Home/Home.css"
 import "./App.css";
 /* UTILS */
 import PortfolioContainer from "./Components/PortfolioContainer";
+
 
 
 if (module.hot) {
@@ -16,7 +17,7 @@ if (module.hot) {
 function App() {
   return (
     <div className="App">
-      <PortfolioContainer />
+     <PortfolioContainer/>
     </div>
   );
 }
