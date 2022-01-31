@@ -1,5 +1,5 @@
 export default class Animations {
-    static animations = new Animation()
+    static animations = new Animations()
 
     fadeInPage = (page_name)=> {
         let page = document.getElementById(page_name);

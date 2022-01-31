@@ -1,10 +1,27 @@
 import Home from "../Pages/Home/Home";
+import AboutMe from "../Pages/AboutMe/AboutMe";
+import Resume from "../Pages/Resume/Resume";
+import ContactMe from "../Pages/ContactMe/ContactMe";
+import Credit from "../Pages/Bottom/Credit";
 
 export const TOTAL_PAGES = [
   {
     page_name: "Home",
     component: Home,
   },
+  {
+    page_name: "Om mig",
+    component: AboutMe,
+  },
+  {
+    page_name: "Backgrund",
+    component: Resume,
+  },
+  {
+    page_name: "Kontakta mig",
+    component: ContactMe,
+  },
+  { page_name: "Credit", component: Credit },
 ];
 
 export const GET_PAGE_INDEX = (page_name) => {
