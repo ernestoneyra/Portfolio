@@ -1,5 +1,4 @@
 import React from "react";
-import './Footer.css'
 
 
 export default function Footer() {
@@ -10,7 +9,7 @@ export default function Footer() {
           <img
             alt="footer"
             src={require("../../Materials/Testimonial/shape-bg.png").default}
-          />
+          ></img>
         </div>
       </div>
     </>
